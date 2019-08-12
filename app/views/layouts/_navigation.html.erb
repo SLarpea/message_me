@@ -1,9 +1,9 @@
 
 
 <div class="ui inverted secondary menu">
-  <a class=" item"><i class="home icon"></i>
-    Chatroom
-  </a>
+  <%= link_to root_path, class: :item do %>
+    <i class="universal access icon"></i> Chatroom
+  <% end %>
   <a class="item"><i class="rocketchat icon"></i>
     Messages
   </a>
@@ -16,7 +16,9 @@
       <i class="dropdown icon"></i>
       <div class="menu">
         <div class="item"><i class="sign-out icon"></i>Log out</div>
-        <div class="item"><i class="sign-in icon"></i>Log in</div>
+        <%= link_to login_path, class: :item do %>
+          <i class="sign-in icon"></i> Log in
+        <% end %>
       </div>
     </div>
     <div class="item">

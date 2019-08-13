@@ -15,14 +15,17 @@
       Account
       <i class="dropdown icon"></i>
       <div class="menu">
-        <div class="item"><i class="sign-out icon"></i>Log out</div>
-        <%= link_to login_path, class: :item do %>
-          <i class="sign-in icon"></i> Log in
+        <% if logged_in? %>
+          <%= link_to "Log out", logout_path, method: :delete, class: "item" %>
+        <% else %>
+          <%= link_to "Log in",login_path, class: "item" %>
         <% end %>
       </div>
     </div>
+    <% if !logged_in? %>
     <div class="item">
-      <div class="ui teal button">Sign Up</div>
+      <%= link_to "Log in", login_path, class: "ui teal button" %>
     </div>
+    <% end %>
   </div>
 </div>
